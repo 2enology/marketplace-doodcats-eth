@@ -1,0 +1,320 @@
+[
+  {
+    "type": "constructor",
+    "stateMutability": "nonpayable",
+    "inputs": [
+      { "type": "address", "name": "_ownerAddr", "internalType": "address" }
+    ]
+  },
+  {
+    "type": "event",
+    "name": "MarketItemCreated",
+    "inputs": [
+      {
+        "type": "uint256",
+        "name": "itemId",
+        "internalType": "uint256",
+        "indexed": true
+      },
+      {
+        "type": "address",
+        "name": "nftContract",
+        "internalType": "address",
+        "indexed": true
+      },
+      {
+        "type": "uint256",
+        "name": "tokenId",
+        "internalType": "uint256",
+        "indexed": true
+      },
+      {
+        "type": "address",
+        "name": "seller",
+        "internalType": "address",
+        "indexed": false
+      },
+      {
+        "type": "address",
+        "name": "owner",
+        "internalType": "address",
+        "indexed": false
+      },
+      {
+        "type": "uint256",
+        "name": "price",
+        "internalType": "uint256",
+        "indexed": false
+      },
+      {
+        "type": "uint256",
+        "name": "listedTime",
+        "internalType": "uint256",
+        "indexed": false
+      },
+      {
+        "type": "bool",
+        "name": "isSold",
+        "internalType": "bool",
+        "indexed": false
+      }
+    ],
+    "anonymous": false
+  },
+  {
+    "type": "event",
+    "name": "OwnershipTransferred",
+    "inputs": [
+      {
+        "type": "address",
+        "name": "previousOwner",
+        "internalType": "address",
+        "indexed": true
+      },
+      {
+        "type": "address",
+        "name": "newOwner",
+        "internalType": "address",
+        "indexed": true
+      }
+    ],
+    "anonymous": false
+  },
+  {
+    "type": "function",
+    "stateMutability": "nonpayable",
+    "outputs": [],
+    "name": "createMarketItem",
+    "inputs": [
+      { "type": "address", "name": "nftContract", "internalType": "address" },
+      { "type": "address", "name": "priceAsset", "internalType": "address" },
+      { "type": "uint256", "name": "tokenId", "internalType": "uint256" },
+      { "type": "uint256", "name": "price", "internalType": "uint256" },
+      { "type": "bool", "name": "_isSGB", "internalType": "bool" }
+    ]
+  },
+  {
+    "type": "function",
+    "stateMutability": "payable",
+    "outputs": [],
+    "name": "createMarketSaleWithSGB",
+    "inputs": [
+      { "type": "address", "name": "nftContract", "internalType": "address" },
+      { "type": "uint256", "name": "itemId", "internalType": "uint256" }
+    ]
+  },
+  {
+    "type": "function",
+    "stateMutability": "nonpayable",
+    "outputs": [],
+    "name": "createMarketSaleWithToken",
+    "inputs": [
+      { "type": "address", "name": "nftContract", "internalType": "address" },
+      { "type": "address", "name": "priceAsset", "internalType": "address" },
+      { "type": "uint256", "name": "itemId", "internalType": "uint256" }
+    ]
+  },
+  {
+    "type": "function",
+    "stateMutability": "view",
+    "outputs": [{ "type": "uint8", "name": "", "internalType": "uint8" }],
+    "name": "feePercent",
+    "inputs": []
+  },
+  {
+    "type": "function",
+    "stateMutability": "view",
+    "outputs": [{ "type": "address", "name": "", "internalType": "address" }],
+    "name": "fetchBuyerOfMarketItem",
+    "inputs": [
+      { "type": "uint256", "name": "_marketId", "internalType": "uint256" }
+    ]
+  },
+  {
+    "type": "function",
+    "stateMutability": "view",
+    "outputs": [
+      {
+        "type": "tuple[]",
+        "name": "",
+        "internalType": "struct DoodMarketplace.MarketItem[]",
+        "components": [
+          { "type": "uint256", "name": "itemId", "internalType": "uint256" },
+          {
+            "type": "address",
+            "name": "nftContract",
+            "internalType": "address"
+          },
+          {
+            "type": "address",
+            "name": "priceAsset",
+            "internalType": "address"
+          },
+          { "type": "uint256", "name": "tokenId", "internalType": "uint256" },
+          { "type": "address", "name": "seller", "internalType": "address" },
+          { "type": "address", "name": "buyer", "internalType": "address" },
+          { "type": "uint256", "name": "price", "internalType": "uint256" },
+          {
+            "type": "uint256",
+            "name": "listedTime",
+            "internalType": "uint256"
+          },
+          { "type": "bool", "name": "isSGB", "internalType": "bool" },
+          { "type": "bool", "name": "isSold", "internalType": "bool" }
+        ]
+      }
+    ],
+    "name": "fetchItemsCreated",
+    "inputs": []
+  },
+  {
+    "type": "function",
+    "stateMutability": "view",
+    "outputs": [
+      {
+        "type": "tuple[]",
+        "name": "",
+        "internalType": "struct DoodMarketplace.MarketItem[]",
+        "components": [
+          { "type": "uint256", "name": "itemId", "internalType": "uint256" },
+          {
+            "type": "address",
+            "name": "nftContract",
+            "internalType": "address"
+          },
+          {
+            "type": "address",
+            "name": "priceAsset",
+            "internalType": "address"
+          },
+          { "type": "uint256", "name": "tokenId", "internalType": "uint256" },
+          { "type": "address", "name": "seller", "internalType": "address" },
+          { "type": "address", "name": "buyer", "internalType": "address" },
+          { "type": "uint256", "name": "price", "internalType": "uint256" },
+          {
+            "type": "uint256",
+            "name": "listedTime",
+            "internalType": "uint256"
+          },
+          { "type": "bool", "name": "isSGB", "internalType": "bool" },
+          { "type": "bool", "name": "isSold", "internalType": "bool" }
+        ]
+      }
+    ],
+    "name": "fetchMarketItems",
+    "inputs": []
+  },
+  {
+    "type": "function",
+    "stateMutability": "view",
+    "outputs": [
+      {
+        "type": "tuple[]",
+        "name": "",
+        "internalType": "struct DoodMarketplace.MarketItem[]",
+        "components": [
+          { "type": "uint256", "name": "itemId", "internalType": "uint256" },
+          {
+            "type": "address",
+            "name": "nftContract",
+            "internalType": "address"
+          },
+          {
+            "type": "address",
+            "name": "priceAsset",
+            "internalType": "address"
+          },
+          { "type": "uint256", "name": "tokenId", "internalType": "uint256" },
+          { "type": "address", "name": "seller", "internalType": "address" },
+          { "type": "address", "name": "buyer", "internalType": "address" },
+          { "type": "uint256", "name": "price", "internalType": "uint256" },
+          {
+            "type": "uint256",
+            "name": "listedTime",
+            "internalType": "uint256"
+          },
+          { "type": "bool", "name": "isSGB", "internalType": "bool" },
+          { "type": "bool", "name": "isSold", "internalType": "bool" }
+        ]
+      }
+    ],
+    "name": "fetchMyNFTs",
+    "inputs": []
+  },
+  {
+    "type": "function",
+    "stateMutability": "view",
+    "outputs": [{ "type": "uint256", "name": "", "internalType": "uint256" }],
+    "name": "fetchPriceOfMarketItem",
+    "inputs": [
+      { "type": "uint256", "name": "_marketId", "internalType": "uint256" }
+    ]
+  },
+  {
+    "type": "function",
+    "stateMutability": "view",
+    "outputs": [{ "type": "address", "name": "", "internalType": "address" }],
+    "name": "fetchSellerOfMarketItem",
+    "inputs": [
+      { "type": "uint256", "name": "_marketId", "internalType": "uint256" }
+    ]
+  },
+  {
+    "type": "function",
+    "stateMutability": "view",
+    "outputs": [{ "type": "address", "name": "", "internalType": "address" }],
+    "name": "getOwnerAddr",
+    "inputs": []
+  },
+  {
+    "type": "function",
+    "stateMutability": "view",
+    "outputs": [{ "type": "address", "name": "", "internalType": "address" }],
+    "name": "owner",
+    "inputs": []
+  },
+  {
+    "type": "function",
+    "stateMutability": "nonpayable",
+    "outputs": [],
+    "name": "renounceOwnership",
+    "inputs": []
+  },
+  {
+    "type": "function",
+    "stateMutability": "nonpayable",
+    "outputs": [],
+    "name": "setFeePercent",
+    "inputs": [
+      { "type": "uint8", "name": "_feePercent", "internalType": "uint8" }
+    ]
+  },
+  {
+    "type": "function",
+    "stateMutability": "nonpayable",
+    "outputs": [],
+    "name": "setOwnerAddr",
+    "inputs": [
+      { "type": "address", "name": "_ownerAddr", "internalType": "address" }
+    ]
+  },
+  {
+    "type": "function",
+    "stateMutability": "nonpayable",
+    "outputs": [],
+    "name": "transferOwnership",
+    "inputs": [
+      { "type": "address", "name": "newOwner", "internalType": "address" }
+    ]
+  },
+  {
+    "type": "function",
+    "stateMutability": "nonpayable",
+    "outputs": [],
+    "name": "unlistMarketItem",
+    "inputs": [
+      { "type": "address", "name": "nftContract", "internalType": "address" },
+      { "type": "uint256", "name": "itemId", "internalType": "uint256" }
+    ]
+  }
+]

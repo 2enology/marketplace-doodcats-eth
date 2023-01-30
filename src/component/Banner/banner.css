@@ -1,0 +1,135 @@
+.coin {
+  -webkit-animation: shake-vertical 10s cubic-bezier(0.455, 0.030, 0.515, 0.955) 1s infinite both;
+  animation: shake-vertical 10s cubic-bezier(0.455, 0.030, 0.515, 0.955) 1s infinite both;
+}
+
+.welcom-title {
+  font-family: "Scope One", serif;
+  color: #fc3735;
+  background: -webkit-linear-gradient(left, #f1125d, #709af5, #ffef0a);
+  background-size: 1600px 200px;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -webkit-animation-duration: 3s;
+  animation-duration: 3s;
+  -webkit-animation-name: animationgradienttitle;
+  animation-name: animationgradienttitle;
+  -webkit-animation-iteration-count: infinite;
+  animation-iteration-count: infinite;
+  -webkit-animation-fill-mode: forwards;
+  animation-fill-mode: forwards;
+
+}
+
+@-webkit-keyframes animationgradienttitle {
+  0% {
+    background-position: 0 1600px;
+  }
+
+  100% {
+    background-position: 1600px 0;
+  }
+}
+
+@keyframes animationgradienttitle {
+  0% {
+    background-position: 0 1600px;
+  }
+
+  100% {
+    background-position: 1600px 0;
+  }
+}
+
+.connect-btn {
+  background: #1B3FCF;
+  background: repeating-linear-gradient(to right, #1B3FCF 0%, #CF0C26 100%);
+  -webkit-background-clip: text;
+  -webkit-background-fill-color: transparent;
+
+}
+
+@-webkit-keyframes shake-vertical {
+
+  0%,
+  100% {
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+  }
+
+  10%,
+  30%,
+  50%,
+  70% {
+    -webkit-transform: translateY(-8px);
+    transform: translateY(-8px);
+  }
+
+  20%,
+  40%,
+  60% {
+    -webkit-transform: translateY(8px);
+    transform: translateY(8px);
+  }
+
+  80% {
+    -webkit-transform: translateY(6.4px);
+    transform: translateY(6.4px);
+  }
+
+  90% {
+    -webkit-transform: translateY(-6.4px);
+    transform: translateY(-6.4px);
+  }
+}
+
+@keyframes shake-vertical {
+
+  0%,
+  100% {
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+  }
+
+  10%,
+  30%,
+  50%,
+  70% {
+    -webkit-transform: translateY(-8px);
+    transform: translateY(-8px);
+  }
+
+  20%,
+  40%,
+  60% {
+    -webkit-transform: translateY(8px);
+    transform: translateY(8px);
+  }
+
+  80% {
+    -webkit-transform: translateY(6.4px);
+    transform: translateY(6.4px);
+  }
+
+  90% {
+    -webkit-transform: translateY(-6.4px);
+    transform: translateY(-6.4px);
+  }
+}
+
+/* Slider */
+
+/* Icons */
+@if $slick-font-family=="slick" {
+  @font-face {
+    font-family: "slick";
+    font-weight: normal;
+    font-style: normal;
+  }
+}
+
+@media (max-width: 370px) {
+  .coin {
+    display: none !important;
+  }
+}
